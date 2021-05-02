@@ -1,0 +1,26 @@
+RMI or better known as Remote Method Invocation is an API
+provided by JAVA for developing distributed applications.
+With RMI we are able to invoke (call) a method within another
+JVM instance.
+
+
+Let's explore the code you're going to run.
+
+########### Responses.java
+
+We need to create an interface that discloses what methods we can
+expect to be available to any class that extends it. This class must
+also extend the Remote object as it will be comes itself a passable
+remote object.
+
+    sayHello(); - To provide a response to the client. Simulates
+    a response from Server that is connected to a database (JDBC)
+
+########### Servant.java
+
+The code in this block is where the implementation takes life. It
+extends the UnicastRemoteObject which aids us in  exporting a remote
+object with JRMP and obtaining a stub that communicates to the remote
+object.
+
+The method sayHello() - returns a response such as "Hello World!".
